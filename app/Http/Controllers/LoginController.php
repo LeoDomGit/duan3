@@ -1,25 +1,19 @@
 <?php
 
 namespace App\Http\Controllers;
-use Illuminate\Support\Facades\Http;
+
 use Illuminate\Http\Request;
 use Jenssegers\Agent\Agent;
-class UserControllers extends BaseController
+class LoginController extends BaseController
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-
     public function index()
     {
-        $userRole = Http::get('http://127.0.0.1:3000/api/allRole');
-        $usersArr = Http::get('http://127.0.0.1:3000/api/allUsers');
-        $userRole = json_decode($userRole);
-        $usersArr= json_decode($usersArr);
-        $device = BaseController::detectedDivice();
-        return view($device.'users.index',compact('userRole','usersArr'));
+        //
     }
 
     /**
@@ -27,9 +21,10 @@ class UserControllers extends BaseController
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function loginIdx()
     {
-        //
+        $device = BaseController::detectedDivice();
+        return view($device.'login.index');
     }
 
     /**

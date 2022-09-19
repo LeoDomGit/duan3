@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserControllers;
+use App\Http\Controllers\LoginController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,5 +15,5 @@ use App\Http\Controllers\UserControllers;
 |
 */
 
+Route::get('/login',[LoginController::class,'loginIdx']);
 Route::get('/', [UserControllers::class,'index']);
-Route::get('detect-device', [FrontController::class, 'detuctDebice'])->name('detect-device');

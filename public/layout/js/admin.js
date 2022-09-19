@@ -15,7 +15,7 @@ function addUser(){
         var usernamenew=$("#usernamenew").val().trim();
         var emailnew=$("#emailnew").val().trim();
         var idRole = $("#userRoleID option:selected").val();
-        if(!emailnew.match(/(.+)@(.+)\.(com)/i)&&!emailnew.match(/(.+)@(fpt.edu)\.(vn)/i)){
+        if(!emailnew.match(/(.+)@(leontec.co+)\.(jp)/i)){
             Swal.fire({
                 icon:'error',
                 text:'Email không hợp lệ',
