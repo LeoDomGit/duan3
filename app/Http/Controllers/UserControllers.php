@@ -15,9 +15,10 @@ class UserControllers extends BaseController
     public function index()
     {
         $userRole = Http::get('http://127.0.0.1:3000/api/allRole');
+        $usersArr = Http::get('http://127.0.0.1:3000/api/allUsers');
         $userRole = json_decode($userRole);
         $device = BaseController::detectedDivice();
-        return view($device.'users.index',compact('userRole'));
+        return view($device.'users.index',compact('userRole','usersArr'));
     }
 
     /**
