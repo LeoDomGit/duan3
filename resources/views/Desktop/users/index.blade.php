@@ -119,26 +119,29 @@
 
         {{-- ================================================================ --}}
         <div class="wrapper mt-3">
-            <div class="accordion" id="accordionPanelsStayOpenExample">
-                @foreach ($usersArr as $item)
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-{{$item->id}}" aria-expanded="true" aria-controls="panelsStayOpen-{{$item->id}}">
-                        {{$item->username}}
-                    </button>
-                  </h2>
-                  <div id="panelsStayOpen-{{$item->id}}" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingOne">
-                    <div class="accordion-body">
-                      <p class="font-weight:bolder;font-size:19px">Username: <span class="font-size:18px">{{$item->username}}</span></p>
-                      <p class="font-weight:bolder;font-size:19px">Tình trạng: <span class="font-size:18px"><?php if($item->status==1){echo "Đang hoạt động";}else{echo "Đang khóa";}?></span></p>
-                      <p class="font-weight:bolder;font-size:19px">Loại tài khoản   : <span class="font-size:18px">{{$item->roleName}}</span></p>
-                      <p class="font-weight:bolder;font-size:19px">Ngày khởi tạo: <span class="font-size:18px"><?php echo date('H:i d/m/yy',strtotime($item->created_at)) ?></span></p>
-
-                    </div>
-                  </div>
-                </div>
-                @endforeach
-              </div>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <td>#</td>
+                        <td>Username</td>
+                        <td>Tên loại tài khoản</td>
+                        <td>Tình trạng</td>
+                        <td>Ngày tạo</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php $i=1;?>
+                    @foreach ($usersArr as $item)
+                    <tr>
+                        <td><?=$i++?></td>
+                        <td>{{$item->username}}</td>
+                        <td>{{$item->roleName}}</td>
+                        <td><?php if($item->status==1){echo "Đang hoạt động";}else{echo "Đang khóa";}?></td>
+                        <td><?php echo date('H:i d/m/yy',strtotime($item->created_at)) ?></td>
+                    </tr>
+                    @endforeach
+                </tbody>
+              </table>
         </div>
 
   @endsection
