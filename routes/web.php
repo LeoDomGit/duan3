@@ -14,7 +14,7 @@ use App\Http\Controllers\GoogleController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('/logout',[UserControllers::class,'logout']);
 Route::get('/login',[LoginController::class,'loginIdx']);
 Route::get('/', [UserControllers::class,'index']);
 Route::get('auth/google', [GoogleController::class,'redirect'])->name('google-auth');

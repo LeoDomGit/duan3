@@ -19,7 +19,11 @@ class GoogleController extends Controller
      */
     public function redirect()
     {
-        return Socialite::driver('google')->redirect();
+        if(Session::has('user')){
+            return redirect('/');
+        }else{
+            return Socialite::driver('google')->redirect();
+        }
     }
 
     /**

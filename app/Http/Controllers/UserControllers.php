@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Http\Request;
 use Jenssegers\Agent\Agent;
+use Illuminate\Support\Facades\Session;
 class UserControllers extends BaseController
 {
     /**
@@ -27,9 +28,14 @@ class UserControllers extends BaseController
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function logout()
     {
-        //
+        if(Session::has('user')){
+            Session::forget('user');
+            return redirect('/login');
+        }else{
+            return redirect('/login');
+        }
     }
 
     /**
