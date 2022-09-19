@@ -98,7 +98,7 @@
               </div>
               <div class="modal-body">
                 <input type="text" class="form-control" placeholder="username" id="usernamenew"><br>
-                <select name="" class="form-control" id="">
+                <select name="" class="form-control" id="userRoleID">
                   @foreach ($userRole as $item)
                       <option value="{{$item->id}}">{{$item->roleName}}</option>
                   @endforeach
@@ -107,7 +107,7 @@
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
-                <button type="button" id="addUser" class="btn btn-primary">Thêm</button>
+                <button type="button" id="addUserbtn" class="btn btn-primary">Thêm</button>
               </div>
             </div>
           </div>

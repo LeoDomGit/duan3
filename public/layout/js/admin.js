@@ -5,8 +5,66 @@ $(document).ready(function () {
     }
 });
     addNewRole();
+    addUser();
 });
+// ===================================
 
+function addUser(){
+    $("#addUserbtn").click(function (e) {
+        e.preventDefault();
+        var usernamenew=$("#usernamenew").val().trim();
+        var emailnew=$("#emailnew").val().trim();
+        var idRole = $("#userRoleID option:selected").val();
+        if(!emailnew.match(/(.+)@(.+)\.(com)/i)&&!emailnew.match(/(.+)@(fpt.edu)\.(vn)/i)){
+            Swal.fire({
+                icon:'error',
+                text:'Email không hợp lệ',
+            });
+        }else if(usernamenew==''){
+            Swal.fire({
+                icon:'error',
+                text:'Username không được bỏ trống',
+            });
+        }else if(isNaN(idRole)==true){
+            Swal.fire({
+                icon:'error',
+                text:'Dữ liệu không hợp lệ',
+            });
+        }else{
+            $.ajax({
+                url: 'http://127.0.0.1:3000/api/addUser',
+                type: "POST",
+                data: {
+                    username:usernamenew,
+                    email:emailnew,
+                    roleId:idRole
+                },
+                success: function (response) {
+                    if(response.status==401){
+                      if(response.error=='exist'){
+                        Swal.fire({
+                            icon:'error',
+                            text:'Đã tồn tại tài khoản',
+                          })
+                      }else{
+                        Swal.fire({
+                            icon:'error',
+                            text:'Thiếu thông tin tài khoản',
+                          })
+                      }
+                    }else if(response.status==200){
+                      Swal.fire({
+                        icon:'success',
+                        text:'Đã thêm tài khoản thành công !',
+                      }).then(()=>{
+                        window.location.reload();
+                      })
+                    }
+                }
+            })
+        }
+    });
+}
 
 // ===================================
 function deleteRole($id){
@@ -52,7 +110,7 @@ function deleteRole($id){
 // ====================================
 
 function addNewRole(){
-    $('#submitRole').click(function (e) { 
+    $('#submitRole').click(function (e) {
         e.preventDefault();
         var newRole = $("#newRole").val().trim();
         if(newRole==''){
@@ -67,7 +125,7 @@ function addNewRole(){
                   toast.addEventListener('mouseleave', Swal.resumeTimer)
                 }
               })
-              
+
               Toast.fire({
                 icon: 'error',
                 title: 'Role name is empty'
@@ -148,7 +206,7 @@ function addNewRole(){
 
 function editRole($id){
   let idRole=$id;
-  $("#submitNewRolebtn").click(function (e) { 
+  $("#submitNewRolebtn").click(function (e) {
     e.preventDefault();
     let newUserRole= $("#RoleNameNew").val().trim();
     if(newUserRole!=''){
