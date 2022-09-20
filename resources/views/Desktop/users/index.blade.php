@@ -102,11 +102,6 @@
               </div>
               <div class="modal-body">
                 <input type="text" class="form-control" placeholder="username" id="usernamenew"><br>
-                <select name="" class="form-control" id="userRoleID">
-                  @foreach ($userRole as $item)
-                      <option value="{{$item->id}}">{{$item->roleName}}</option>
-                  @endforeach
-                </select><br>
                 <input type="text" class="form-control" placeholder="Email" id="emailnew">
               </div>
               <div class="modal-footer">
