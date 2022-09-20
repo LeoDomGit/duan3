@@ -14,7 +14,6 @@ function addUser(){
         e.preventDefault();
         var usernamenew=$("#usernamenew").val().trim();
         var emailnew=$("#emailnew").val().trim();
-        var idRole = $("#userRoleID option:selected").val();
         if(!emailnew.match(/(.+)@(leontec.co+)\.(jp)/i)){
             Swal.fire({
                 icon:'error',
@@ -37,7 +36,6 @@ function addUser(){
                 data: {
                     username:usernamenew,
                     email:emailnew,
-                    roleId:idRole
                 },
                 success: function (response) {
                     if(response.status==401){
