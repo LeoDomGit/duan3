@@ -119,7 +119,6 @@
                     <tr>
                         <td>#</td>
                         <td>Username</td>
-                        <td>Tên loại tài khoản</td>
                         <td>Tình trạng</td>
                         <td>Ngày tạo</td>
                     </tr>
@@ -130,7 +129,6 @@
                     <tr>
                         <td><?=$i++?></td>
                         <td>{{$item->username}}</td>
-                        <td>{{$item->roleName}}</td>
                         <td><?php if($item->status==1){echo "Đang hoạt động";}else{echo "Đang khóa";}?></td>
                         <td><?php echo date('H:i d/m/yy',strtotime($item->created_at)) ?></td>
                     </tr>

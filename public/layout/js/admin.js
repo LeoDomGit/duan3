@@ -24,11 +24,6 @@ function addUser(){
                 icon:'error',
                 text:'Username không được bỏ trống',
             });
-        }else if(isNaN(idRole)==true){
-            Swal.fire({
-                icon:'error',
-                text:'Dữ liệu không hợp lệ',
-            });
         }else{
             $.ajax({
                 url: 'http://127.0.0.1:3000/api/addUser',
