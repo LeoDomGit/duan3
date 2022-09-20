@@ -128,7 +128,7 @@
                     @foreach ($usersArr as $item)
                     <tr>
                         <td><?=$i++?></td>
-                        <td>{{$item->username}}</td>
+                        <td><p style="cursor: pointer;">{{$item->username}}</p></td>
                         <td><?php if($item->status==1){echo "Đang hoạt động";}else{echo "Đang khóa";}?></td>
                         <td><?php echo date('H:i d/m/yy',strtotime($item->created_at)) ?></td>
                     </tr>
