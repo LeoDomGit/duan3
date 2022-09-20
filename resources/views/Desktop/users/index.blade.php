@@ -113,6 +113,8 @@
         </div>
 
         {{-- ================================================================ --}}
+        
+        {{-- End Modal --}}
         <div class="wrapper mt-3">
             <table class="table table-striped">
                 <thead>
