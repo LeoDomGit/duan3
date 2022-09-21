@@ -118,7 +118,7 @@
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="configUserRoleLabel">Lựa chọn Loại tài khoản</h5>
+                <h5 class="modal-title" id="configUserRoleLabel">Tùy chỉnh tài khoản</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
@@ -129,7 +129,7 @@
                      @endforeach
                     @endforeach
                 </select><br>
-                <button class="btn-sm btn-secondary">Khóa tài khoản</button>
+                <button class="btn-sm btn-secondary" id="blockuserbtn">Khóa tài khoản</button>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>

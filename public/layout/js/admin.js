@@ -7,7 +7,6 @@ $(document).ready(function () {
     addNewRole();
     addUser();
 });
-
 // ==================================
 
  function addUserRole(user){
@@ -50,6 +49,31 @@ $(document).ready(function () {
                 }
             })
         }
+    });
+    $("#blockuserbtn").click(function (e) {
+        e.preventDefault();
+        $.ajax({
+            url: 'http://127.0.0.1:3000/api/blockUser',
+            type: "POST",
+            data: {
+                username:username,
+            },
+            success: function (response) {
+                if(response.status==400){
+                    Swal.fire({
+                        icon:'error',
+                        text:'Cập nhật không thành công',
+                      })
+                }else if(response.status==200){
+                  Swal.fire({
+                    icon:'success',
+                    text:'Đã cập nhật loại tài khoản thành công!',
+                  }).then(()=>{
+                    window.location.reload();
+                  })
+                }
+            }
+        })
     });
  }
 // ===================================
