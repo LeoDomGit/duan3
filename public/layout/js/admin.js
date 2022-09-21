@@ -25,7 +25,7 @@ function addProject(){
                 method: 'POST',
                 url: '',
                 data: {
-                    name: projectName
+                    projectName: projectName
                 },
                 success: function (response) {
                     Swal.fire({
