@@ -58,8 +58,8 @@
                                 {{$item->roleName}}
                               </td>
                               <td>
-                                <button class="btn btn-danger btn-sm" onclick="deleteRole({{$item->id}})">Xóa</button>
-                                <button data-bs-toggle="modal" data-bs-target="#editModal" onclick="editRole({{$item->id}})" class="btn btn-warning btn-sm">Sửa</button>
+                                <button class="btn btn-danger btn-sm" onclick="deleteRole({{$item->idRole}})">Xóa</button>
+                                <button data-bs-toggle="modal" data-bs-target="#editModal" onclick="editRole({{$item->idRole}})" class="btn btn-warning btn-sm">Sửa</button>
                               </td>
                             </tr>
                         @endforeach
@@ -124,7 +124,7 @@
               <div class="modal-body">
                 <select name="" class="form-control" id="UserRoleSelect">
                      @foreach ($userRole as $item1)
-                      <option value="{{$item1->id}}">{{$item1->roleName}}</option>
+                      <option value="{{$item1->idRole}}">{{$item1->roleName}}</option>
                     @endforeach
                 </select><br>
                 <button class="btn-sm btn-secondary" id="blockuserbtn">Khóa tài khoản</button>
