@@ -114,7 +114,7 @@ function addUser(){
         e.preventDefault();
         var usernamenew=$("#usernamenew").val().trim();
         var emailnew=$("#emailnew").val().trim();
-        if(!emailnew.match(/(.+)@(leontec.co+)\.(jp)/i)&&!emailnew.match(/(.+)@(.+)\.(com)/i){
+        if(!emailnew.match(/(.+)@(leontec.co+)\.(jp)/i)&&!emailnew.match(/(.+)@(.+)\.(com)/i)){
             Swal.fire({
                 icon:'error',
                 text:'Email không hợp lệ',
