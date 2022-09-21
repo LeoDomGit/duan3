@@ -123,10 +123,8 @@
               </div>
               <div class="modal-body">
                 <select name="" class="form-control" id="UserRoleSelect">
-                    @foreach ($usersArr as $item)
                      @foreach ($userRole as $item1)
-                      <option <?php if($item1->id==$item->userRoleID){echo 'selected';}?> value="{{$item1->id}}">{{$item1->roleName}}</option>
-                     @endforeach
+                      <option value="{{$item1->id}}">{{$item1->roleName}}</option>
                     @endforeach
                 </select><br>
                 <button class="btn-sm btn-secondary" id="blockuserbtn">Khóa tài khoản</button>
