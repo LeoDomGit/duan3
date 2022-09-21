@@ -14,18 +14,31 @@ function addProject(){
     $("#addProjectBtn").click(function (e) {
         e.preventDefault();
         var projectName = $("#projectName").val().trim();
+        var projectDescription = $("#projectDescription").val().trim();
+        var idUserTeamLead= $("#idUserTeamLead option:selected").val();
         if(projectName==''){
             Swal.fire({
                 icon: 'warning',
                 text: 'Thiếu tên dự án',
-
+            });
+        }else if(projectDescription==''){
+            Swal.fire({
+                icon: 'warning',
+                text: 'Thiếu mô tả dự án',
+            });
+        }else if(idUserTeamLead==''||isNaN(idUserTeamLead)==true){
+            Swal.fire({
+                icon: 'warning',
+                text: 'Thông tin không hợp lệ',
             });
         }else{
             $.ajax({
                 method: 'POST',
-                url: '',
+                url: 'http://127.0.0.1:3000/api/createAProject',
                 data: {
-                    projectName: projectName
+                    projectName: projectName,
+                    idUserTeamLead:idUserTeamLead,
+                    projectDescription:projectDescription
                 },
                 success: function (response) {
                     Swal.fire({

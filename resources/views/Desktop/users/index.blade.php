@@ -166,7 +166,13 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                <input type="text" id="projectName" class="form-control" placeholder="Tên dự án . . .">
+                <input type="text" id="projectName" class="form-control" placeholder="Tên dự án . . ."><br>
+                <select name="" class="form-control" id="idUserTeamLead">
+                    @foreach ($TeamleadArr as $item)
+                        <option value="{{$item->idUser}}">{{$item->username}}</option>
+                    @endforeach
+                </select><br>
+                <input type="text" class="form-control" id="projectDescription" placeholder="Mô tả dự án" >
                 </div>
                 <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

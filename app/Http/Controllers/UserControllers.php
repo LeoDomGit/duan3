@@ -21,6 +21,7 @@ class UserControllers extends BaseController
         $TeamleadArr = Http::get('http://127.0.0.1:3000/api/getAllTeamleader');
         $userRole = json_decode($userRole);
         $usersArr= json_decode($usersArr);
+        $TeamleadArr= json_decode($TeamleadArr);
         $device = BaseController::detectedDivice();
         return view($device.'users.index',compact('userRole','usersArr','TeamleadArr'));
     }
