@@ -114,28 +114,27 @@
 
         {{-- ================================================================ --}}
         <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Launch demo modal
-</button>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
+        <div class="modal fade" id="configUserRole" tabindex="-1" aria-labelledby="configUserRoleLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="configUserRoleLabel">Lựa chọn Loại tài khoản</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <select name="" class="form-control" id="">
+                  @foreach ($userRole as $item)
+                      <option value="{{$item->id}}">{{$item->roleName}}</option>
+                  @endforeach
+                </select><br>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                <button type="button" class="btn btn-primary">Lưu</button>
+              </div>
+            </div>
+          </div>
+        </div>
         {{-- End Modal --}}
         <div class="wrapper mt-3">
             <table class="table table-striped">
@@ -152,7 +151,7 @@
                     @foreach ($usersArr as $item)
                     <tr>
                         <td><?=$i++?></td>
-                        <td><p style="cursor: pointer;">{{$item->username}}</p></td>
+                        <td><button onclick="addUserRole('<?=$item->username?>')" data-bs-toggle="modal" data-bs-target="#configUserRole" style="border:none">{{$item->username}}</button></td>
                         <td><?php if($item->status==1){echo "Đang hoạt động";}else{echo "Đang khóa";}?></td>
                         <td><?php echo date('H:i d/m/yy',strtotime($item->created_at)) ?></td>
                     </tr>

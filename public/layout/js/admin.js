@@ -7,6 +7,13 @@ $(document).ready(function () {
     addNewRole();
     addUser();
 });
+
+// ==================================
+
+ function addUserRole(user){
+    let username = user;
+    console.log(username);
+ }
 // ===================================
 
 function addUser(){
