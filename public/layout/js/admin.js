@@ -22,7 +22,7 @@ function addNewTeam() {
         }else{
             $.ajax({
                 method: 'POST',
-                url: '/createTeam',
+                url: 'http://127.0.0.1:3000/api/createTeam',
                 data: {
                     newTeam: newTeam
                 },
