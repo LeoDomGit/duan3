@@ -68,8 +68,8 @@
                             </a>
                             <div class="collapse" id="collapseLayouts1" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" style="cursor: pointer;" data-bs-toggle="modal"  data-bs-target="#loaiTKMD">Thêm teams</a>
-                                    <a class="nav-link" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#AddNewUserMD" >Tất cả các Teams</a>
+                                    <a class="nav-link" style="cursor: pointer;">Thêm teams</a>
+                                    <a class="nav-link" style="cursor: pointer;" href="/teams" >Tất cả các Teams</a>
                                 </nav>
                             </div>
                                   {{-- <div class="sb-sidenav-menu-heading">Addons</div>
