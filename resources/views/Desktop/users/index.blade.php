@@ -123,9 +123,11 @@
               </div>
               <div class="modal-body">
                 <select name="" class="form-control" id="">
-                  @foreach ($userRole as $item)
-                      <option value="{{$item->id}}">{{$item->roleName}}</option>
-                  @endforeach
+                    @foreach ($usersArr as $item)
+                     @foreach ($userRole as $item1)
+                      <option <?php if($item1->id==$item->userRoleID){echo 'selected';}?> value="{{$item1->id}}">{{$item1->roleName}}</option>
+                     @endforeach
+                    @endforeach
                 </select><br>
               </div>
               <div class="modal-footer">
