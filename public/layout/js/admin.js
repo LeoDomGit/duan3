@@ -12,7 +12,52 @@ $(document).ready(function () {
 
  function addUserRole(user){
     let username = user;
-    console.log(username);
+    $("#addUserRolebtn").click(function (e) {
+        e.preventDefault();
+        var idRole = $("#UserRoleSelect option:selected").val();
+        if(isNaN(idRole)==false){
+            Swal.fire({
+                icon:'error',
+                text:'Dữ liệu không hợp lệ',
+            });
+        }else if(isNumeric(username)==true){
+            Swal.fire({
+                icon:'error',
+                text:'Dữ liệu không hợp lệ',
+            });
+        }else{
+            $.ajax({
+                url: 'http://127.0.0.1:3000/api/updateUserRoles',
+                type: "POST",
+                data: {
+                    username:username,
+                    idRole:idRole,
+                },
+                success: function (response) {
+                    if(response.status==401){
+                      if(response.error=='exist'){
+                        Swal.fire({
+                            icon:'error',
+                            text:'Đã tồn tại tài khoản',
+                          })
+                      }else{
+                        Swal.fire({
+                            icon:'error',
+                            text:'Thiếu thông tin tài khoản',
+                          })
+                      }
+                    }else if(response.status==200){
+                      Swal.fire({
+                        icon:'success',
+                        text:'Đã thêm tài khoản thành công !',
+                      }).then(()=>{
+                        window.location.reload();
+                      })
+                    }
+                }
+            })
+        }
+    });
  }
 // ===================================
 

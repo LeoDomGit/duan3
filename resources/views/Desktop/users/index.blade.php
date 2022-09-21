@@ -122,7 +122,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
-                <select name="" class="form-control" id="">
+                <select name="" class="form-control" id="UserRoleSelect">
                     @foreach ($usersArr as $item)
                      @foreach ($userRole as $item1)
                       <option <?php if($item1->id==$item->userRoleID){echo 'selected';}?> value="{{$item1->id}}">{{$item1->roleName}}</option>
