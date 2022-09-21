@@ -6,7 +6,38 @@ $(document).ready(function () {
 });
     addNewRole();
     addUser();
+    addNewTeam();
 });
+// ==================================
+
+function addNewTeam() {
+    $("#addTeamBtn").click(function (e) {
+        e.preventDefault();
+        var newTeam = $("#newTeam").val().trim();
+        if(newTeam=='') {
+            Swal.fire({
+                icon: 'warning',
+                text: 'Please enter a team name',
+            });
+        }else{
+            $.ajax({
+                method: 'POST',
+                url: '/createTeam',
+                data: {
+                    newTeam: newTeam
+                },
+                success: function (response) {
+                    Swal.fire({
+                        icon:'success',
+                    })
+                }
+
+            })
+        }
+    });
+
+}
+
 // ==================================
 
  function addUserRole(user){

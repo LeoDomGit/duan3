@@ -148,11 +148,11 @@
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                  <input type="text" placeholder="Team mới" class="form-control">
+                  <input type="text" placeholder="Team mới" id="newTeam" class="form-control">
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
-                  <button type="button" class="btn btn-primary">Thêm</button>
+                  <button type="button" id="addTeamBtn" class="btn btn-primary">Thêm</button>
                 </div>
               </div>
             </div>
