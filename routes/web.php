@@ -15,6 +15,7 @@ use App\Http\Controllers\GoogleController;
 |
 */
 Route::get('/logout',[UserControllers::class,'logout']);
+Route::get('/teams',[UserControllers::class,'logout']);
 Route::get('/login',[LoginController::class,'loginIdx']);
 Route::get('/', [UserControllers::class,'index']);
 Route::get('auth/google', [GoogleController::class,'redirect'])->name('google-auth');

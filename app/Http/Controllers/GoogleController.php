@@ -47,7 +47,6 @@ class GoogleController extends Controller
                 if($checkEmail["check"]=='true'){
                     Session::put('user', $email);
                     return redirect('/');
-
                 }else{
                     return redirect('/login');
                 }
