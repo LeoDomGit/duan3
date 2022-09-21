@@ -15,12 +15,12 @@ $(document).ready(function () {
     $("#addUserRolebtn").click(function (e) {
         e.preventDefault();
         var idRole = $("#UserRoleSelect option:selected").val();
-        if(isNaN(idRole)==false){
+        if(isNaN(idRole)==true){
             Swal.fire({
                 icon:'error',
                 text:'Dữ liệu không hợp lệ',
             });
-        }else if(isNumeric(username)==true){
+        }else if(isNaN(username)==false){
             Swal.fire({
                 icon:'error',
                 text:'Dữ liệu không hợp lệ',
@@ -34,22 +34,15 @@ $(document).ready(function () {
                     idRole:idRole,
                 },
                 success: function (response) {
-                    if(response.status==401){
-                      if(response.error=='exist'){
+                    if(response.status==400){
                         Swal.fire({
                             icon:'error',
-                            text:'Đã tồn tại tài khoản',
+                            text:'Cập nhật không thành công',
                           })
-                      }else{
-                        Swal.fire({
-                            icon:'error',
-                            text:'Thiếu thông tin tài khoản',
-                          })
-                      }
                     }else if(response.status==200){
                       Swal.fire({
                         icon:'success',
-                        text:'Đã thêm tài khoản thành công !',
+                        text:'Đã cập nhật loại tài khoản thành công!',
                       }).then(()=>{
                         window.location.reload();
                       })
