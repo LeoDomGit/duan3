@@ -58,30 +58,25 @@
                                     <a class="nav-link" style="cursor: pointer;" data-bs-toggle="modal"  data-bs-target="#loaiTKMD">Loại tài khoản</a>
                                     <a class="nav-link" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#AddNewUserMD" >Thêm loại tài khoản</a>
                                     <a class="nav-link" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#addUserMd" >Thêm tài khoản</a>
+
                                 </nav>
                             </div>
-                            <div style="cursor: pointer;" class="sb-sidenav-menu-heading">Team Manager</div>
-                            <a class="nav-link collapsed" href="/teams" data-bs-toggle="collapse" data-bs-target="#collapseLayouts1" aria-expanded="false" aria-controls="collapseLayouts">
+                            {{-- ============================== --}}
+
+                            <div style="cursor: pointer;" class="sb-sidenav-menu-heading">Teams Manage</div>
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts1" aria-expanded="false" aria-controls="collapseLayouts">
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                                 Teams
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
                             <div class="collapse" id="collapseLayouts1" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" style="cursor: pointer;">Thêm teams</a>
-                                    <a class="nav-link" style="cursor: pointer;" href="/teams" >Tất cả các Teams</a>
+                                    <a class="nav-link" href="/allteams" style="cursor: pointer;">Tất cả teams</a>
+                                    <a class="nav-link" data-bs-toggle="modal" data-bs-target="#AddTeamModal" style="cursor: pointer;">Thêm team</a>
                                 </nav>
                             </div>
-                                  {{-- <div class="sb-sidenav-menu-heading">Addons</div>
-                            <a class="nav-link" href="charts.html">
-                                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-                                Charts
-                            </a>
-                            <a class="nav-link" href="tables.html">
-                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                                Tables
-                            </a> --}}
                         </div>
+
                     </div>
                 </nav>
             </div>

@@ -138,6 +138,25 @@
             </div>
           </div>
         </div>
+
+        {{-- =================================== --}}
+        <div class="modal fade" id="AddTeamModal" tabindex="-1" aria-labelledby="AddTeamModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="AddTeamModalLabel">Thêm team form</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <input type="text" placeholder="Team mới" class="form-control">
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                  <button type="button" class="btn btn-primary">Thêm</button>
+                </div>
+              </div>
+            </div>
+          </div>
         {{-- End Modal --}}
         <div class="wrapper mt-3">
             <table class="table table-striped">
