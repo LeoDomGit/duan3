@@ -156,6 +156,27 @@
             </div>
           </div>
         {{-- End Modal --}}
+
+        <!-- Modal -->
+        <div class="modal fade" id="AddProjectModal" tabindex="-1" aria-labelledby="AddProjectModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="AddProjectModalLabel">Thêm dự án</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                <input type="text" id="projectName" class="form-control" placeholder="Tên dự án . . .">
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="addProjectBtn">Lưu</button>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        {{-- ====================================================== --}}
         <div class="wrapper mt-3">
             <table class="table table-striped">
                 <thead>

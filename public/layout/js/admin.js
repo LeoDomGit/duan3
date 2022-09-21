@@ -7,8 +7,35 @@ $(document).ready(function () {
     addNewRole();
     addUser();
     addNewTeam();
+    addProject();
 });
 // ==================================
+function addProject(){
+    $("#addProjectBtn").click(function (e) {
+        e.preventDefault();
+        var projectName = $("#projectName").val().trim();
+        if(projectName==''){
+            Swal.fire({
+                icon: 'warning',
+                text: 'Thiếu tên dự án',
+
+            });
+        }else{
+            $.ajax({
+                method: 'POST',
+                url: '',
+                data: {
+                    name: projectName
+                },
+                success: function (response) {
+                    Swal.fire({
+                        icon:'success',
+                    });
+                }
+            });
+        }
+    });
+}
 
 function addNewTeam() {
     $("#addTeamBtn").click(function (e) {
