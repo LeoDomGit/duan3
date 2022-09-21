@@ -129,6 +129,7 @@
                      @endforeach
                     @endforeach
                 </select><br>
+                <button class="btn-sm btn-secondary">Khóa tài khoản</button>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
