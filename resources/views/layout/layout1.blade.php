@@ -61,7 +61,7 @@
                                 </nav>
                             </div>
                             <div style="cursor: pointer;" class="sb-sidenav-menu-heading">Team Manager</div>
-                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts1" aria-expanded="false" aria-controls="collapseLayouts">
+                            <a class="nav-link collapsed" href="/teams" data-bs-toggle="collapse" data-bs-target="#collapseLayouts1" aria-expanded="false" aria-controls="collapseLayouts">
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                                 Teams
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
