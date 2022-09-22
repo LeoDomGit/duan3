@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserControllers;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\GoogleController;
+use App\Http\Controllers\ProjectController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,3 +22,5 @@ Route::get('/login',[LoginController::class,'loginIdx']);
 Route::get('/', [UserControllers::class,'index']);
 Route::get('auth/google', [GoogleController::class,'redirect'])->name('google-auth');
 Route::get('auth/google/call-back',[GoogleController::class,'callbackGoogle']);
+
+Route::get('/allProjects',[ProjectController::class,'allProjects']);

@@ -41,9 +41,24 @@ function addProject(){
                     projectDescription:projectDescription
                 },
                 success: function (response) {
-                    Swal.fire({
-                        icon:'success',
-                    });
+                    if(response.status==200){
+                        Swal.fire({
+                            icon: 'success',
+                            text: 'Đã thêm thành công',
+                        });
+                    }else{
+                        if(response.message=='not found'){
+                            Swal.fire({
+                                icon: 'warning',
+                                text: 'Tài khoản Team lead không tồn tại',
+                            });
+                        }else if(response.message=='exists'){
+                            Swal.fire({
+                                icon: 'warning',
+                                text: 'Dự án đã được tạo trước đó',
+                            });
+                        }
+                    }
                 }
             });
         }

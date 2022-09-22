@@ -85,7 +85,7 @@
                             </a>
                             <div class="collapse" id="collapseLayouts2" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
-                            <a class="nav-link" href="/allteams" style="cursor: pointer;">Tất cả project</a>
+                            <a class="nav-link" href="/allProjects" style="cursor: pointer;">Tất cả project</a>
                             <a class="nav-link" data-bs-toggle="modal" data-bs-target="#AddProjectModal" style="cursor: pointer;">Thêm project</a>
                             </nav>
                             </div>
